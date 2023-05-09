@@ -1,0 +1,20 @@
+<h2>Binding luôn nhận về chuỗi, rồi muốn làm j cx đc (ép số, ...)</h2>
+
+<h3>One-way data-binding
+    (từ component -> template, ko từ template -> component nên khi thay đổi sẽ ko cập nhật)</h3>
+<input type="text" name="" id="" [ngModel]="msg1_one_way">
+<br>
+{{msg1_one_way}}
+
+<h3>Two-way data-binding</h3>
+<input type="text" name="" id="" [(ngModel)]="msg2_two_way">
+<br>
+{{msg2_two_way}}
+
+
+<h3>Login</h3>
+username: <input type="text" name="" id="" [(ngModel)]="username">
+password: <input type="password" name="" id="" [(ngModel)]="password">
+<input type="button" value="Login" (click)="login()"/>
+<br>
+<span [innerHTML]="msg_login"></span>

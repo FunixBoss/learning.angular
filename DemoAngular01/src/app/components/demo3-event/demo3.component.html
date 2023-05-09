@@ -1,0 +1,20 @@
+<h3>Click Event</h3>
+<input type="button" value="Click me" (click)="clickMe()">
+
+<br>
+
+<input type="button" value="white" (click)="changeBg($event)">
+<input type="button" value="yellow" (click)="changeBg($event)">
+<input type="button" value="red" (click)="changeBg($event)">
+<input type="button" value="blue" (click)="changeBg($event)">
+<br><br>
+
+<input type="button" value="100x100" (click)="resize($event)">
+<input type="button" value="200x200" (click)="resize($event)">
+<input type="button" value="300x300" (click)="resize($event)">
+
+<br><br>
+<img src="{{mainImgSrc}}" width="{{width}}" height="{{height}}" alt="">
+<br><br>
+
+<img *ngFor="let src of subImageSrcs" width="120" height="120" src="{{src}}" alt="" (click)="changeMainImg($event)">

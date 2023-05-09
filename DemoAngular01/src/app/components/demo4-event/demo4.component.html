@@ -1,0 +1,20 @@
+<h3> Keyup Event</h3>
+
+<input type="text" name="" id="" (keyup)="display($event)">
+
+
+
+<h3>Keyup Enter Event</h3>
+<input type="text" name="" id="" (keyup.enter)="displayEnter($event)">
+
+
+<h3>Temperature</h3>
+<input type="text" name="" id="" placeholder="C..." (keyup)="changeTemp($event)">
+<input type="text" name="" id="fDegree" disabled value="{{fDegree}}">
+
+<h3>Search</h3>
+<input type="text" placeholder="Keyword...." (keyup)="search($event)">
+<br>
+<ul>
+    <li *ngFor="let name of result">{{name}}</li>
+</ul>
