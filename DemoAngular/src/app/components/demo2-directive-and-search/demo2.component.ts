@@ -25,6 +25,7 @@ export class Demo2Component implements OnInit {
             photo: 'product1_1.jpg',
             price: 3,
             quantity: 2,
+            category: ''
         }
 
         this.names = [
@@ -38,6 +39,7 @@ export class Demo2Component implements OnInit {
                 photo: 'product1_1.jpg',
                 price: 3,
                 quantity: 5,
+                category: ''
             },
             {
                 id: 2, 
@@ -45,6 +47,7 @@ export class Demo2Component implements OnInit {
                 photo: 'product2_1.jpg',
                 price: 3,
                 quantity: 6,
+                category: ''
             },
             {
                 id: 3, 
@@ -52,6 +55,7 @@ export class Demo2Component implements OnInit {
                 photo: 'product3_1.jpg',
                 price: 3,
                 quantity: 7,
+                category: ''
             },
             {
                 id: 4, 
@@ -59,6 +63,7 @@ export class Demo2Component implements OnInit {
                 photo: 'product4_1.jpg',
                 price: 3,
                 quantity: 8,
+                category: ''
             },
             {
                 id: 5, 
@@ -66,6 +71,7 @@ export class Demo2Component implements OnInit {
                 photo: 'product5_1.jpg',
                 price: 3,
                 quantity: 9,
+                category: ''
             }
         ]
 

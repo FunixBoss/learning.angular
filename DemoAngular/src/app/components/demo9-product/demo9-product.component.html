@@ -1,0 +1,60 @@
+<h3>Demo9</h3>
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>NAME
+            
+        </td>
+        <td>PHOTO</td>
+        <td>PRICE</td>
+        <td>QUANTITY</td>
+    </tr>
+    <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td><img src="assets/images/{{product.photo}}" width="120" height="120"></td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+    </tr>
+</table>
+
+<h3>Product List</h3>
+<br><br>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>NAME
+            <input type="text" placeholder="Keyword...." (keyup)="searchByKeyword($event)">
+        </td>
+        <td>PHOTO</td>
+        <td>PRICE</td>
+        <td>QUANTITY</td>
+        <td>
+            CATEGORY
+            <br>
+            <select (change)="searchByCategory($event)">
+                <option value="">All</option>
+                <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
+            </select>
+        </td>
+        <td>ACTION</td>
+
+    </tr>
+
+    <tr *ngFor="let product of products">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>
+            <img src="assets/images/{{product.photo}}" width="120" height="120">
+            
+        </td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.category}}</td>
+        <td>
+            <input type="button" value="Detail" (click)="getDetails(product.id)">
+        </td>
+    </tr>
+
+</table>

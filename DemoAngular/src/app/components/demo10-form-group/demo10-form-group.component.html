@@ -1,0 +1,135 @@
+<p>Register Form</p>
+<!-- formGroup chi ra map zo doi tuong nao-->
+<form [formGroup]="registerForm" (ngSubmit)="save()">
+    <table>
+        <tr>
+            <td>Username</td>
+            <!-- formController chi ra map zo property nao cua doi tuong-->
+            <td><input type="text" name="" id="" formControlName="username"></td>
+            <td>
+                <div class="" *ngIf="registerForm.get('username').touched">
+                    <div class="" *ngIf="registerForm.hasError('required', ['username'])">
+                        Username is required
+                    </div>
+                    <div class="" *ngIf="registerForm.hasError('minlength', ['username'])">
+                        Username min length is 3
+                    </div>
+                    <div class="" *ngIf="registerForm.hasError('maxlength', ['username'])">
+                        Username max length is 100
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" name="" id="" formControlName="password">
+            </td>
+            <td>
+                <div class="" *ngIf="registerForm.get('password').touched">
+                    <div class="" *ngIf="registerForm.hasError('required', ['password'])">
+                        Password is required
+                    </div>
+                    <div class="" *ngIf="registerForm.hasError('pattern', ['password'])">
+                        Password have to have lowercase words, uppercase words, number, special character, 
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="text" name="" id="" formControlName="email">
+            </td>
+            <td>
+                <div class="" *ngIf="registerForm.get('email').touched">
+                    <div class="" *ngIf="registerForm.hasError('required', ['email'])">
+                        Email is required
+                    </div>
+                    <div class="" *ngIf="registerForm.hasError('pattern', ['email'])">
+                        It have to satisfy email pattern
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>
+                <input type="text" name="" id="" formControlName="age">
+            </td>
+            <td>
+                <div class="" *ngIf="registerForm.get('age').touched">
+                    <div class="" *ngIf="registerForm.hasError('required', ['age'])">
+                        Email is required
+                    </div>
+                    <div class="" *ngIf="registerForm.hasError('min', ['age'])">
+                        min age is 18
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Website</td>
+            <td>
+                <input type="url" id="" formControlName="website">
+            </td>
+            <td>
+                <div class="" *ngIf="registerForm.get('website').touched">
+                    <div class="" *ngIf="registerForm.hasError('pattern', ['website'])">
+                        It have to satisfy url website pattern
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <textarea  name="" id="" formControlName="description"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Address</td>
+            <td formGroupName="address">
+                Street <input type="text" name="" id="" formControlName="street">
+                <br>
+                Ward <input type="text" name="" id="" formControlName="ward">
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Status</td>
+            <input type="checkbox" name="" id="" formControlName="status">
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="" id="" formControlName="gender" value="male"> Male
+                <br>
+                <input type="radio" name="" id="" formControlName="gender" value="female"> Female
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Certificates</td>
+            <td >
+                <ng-container *ngFor="let cert of certs">
+                    <input type="radio" name="" id="" formControlName="cert" [value]="cert.id.toString()"> {{cert.name}}
+                    <br>
+                </ng-container>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">Role</td>
+            <td >
+                <select name="" id="" formControlName="role">
+                    <option *ngFor="let role of roles" value="{{role.id}}">{{role.name | uppercase}}</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp</td>
+            <td><input type="submit" value="Save" [disabled]="registerForm.invalid"></td>
+        </tr>   
+    </table>
+    <input type="hidden" name="" formControlName="id">
+
+</form>

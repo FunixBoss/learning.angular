@@ -12,6 +12,9 @@ export class Demo3Component implements OnInit {
     mainImgSrc: string;
     subImageSrcs: string[];
 
+    constructor() {
+        
+    }
     ngOnInit(): void {
         this.width = '300';
         this.height = '300';
